@@ -4,11 +4,6 @@ public class Livro extends ItemAcervo {
     private String autor;
     private String isbn;
 
-    public Livro (int codigo, String titulo, String autor, String isbn){
-        super(codigo, titulo);
-        this.autor = autor;
-        this.isbn = isbn;
-    }
     @Override
     public int prazoDias(){
         return 14;
@@ -20,6 +15,12 @@ public class Livro extends ItemAcervo {
 
     public String getIsbn(){
         return isbn;
+    }
+
+    public Livro (int codigo, String titulo, String autor, String isbn){
+        super(codigo, titulo);
+        this.autor = autor;
+        this.isbn = isbn;
     }
 
     @Override 

@@ -1,24 +1,25 @@
 package app;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import modelo.Dvd;
+import modelo.ItemAcervo;
 import modelo.Livro;
+import modelo.Revista;
 
 public class Main {
     public static void main(String[] args) {
-        Livro livro1 = new Livro(1, "O nome do vento", "Patrick Rothfuss", "978-8599296493");
 
-        System.out.println(livro1);
-        
-        System.out.println(livro1.isDisponivel());
+        List<ItemAcervo> acervo = new ArrayList<>();
 
-        livro1.emprestar();
+        acervo.add(new Livro(1, "O nome do vento", "Patrick Rothfuss", "978-8599296493"));
+        acervo.add(new Revista(2, "Veja", 105));
+        acervo.add(new Dvd(3, "Catch Me If You Can", 141));
 
-        System.out.println(livro1.isDisponivel());
-
-        System.out.println(livro1);
-
-        livro1.devolver();
-
-        System.out.println(livro1);
+        for (ItemAcervo item : acervo){
+            System.out.println(item);
+            System.out.println("Prazo para devolução: " + item.prazoDias() + " dias" + "\n");
+        }
     }
-    
 }
