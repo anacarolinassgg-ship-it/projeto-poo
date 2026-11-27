@@ -7,6 +7,8 @@ import modelo.Dvd;
 import modelo.ItemAcervo;
 import modelo.Livro;
 import modelo.Revista;
+import modelo.TipoUsuario;
+import modelo.Usuario;
 
 public class Main {
     public static void main(String[] args) {
@@ -21,5 +23,13 @@ public class Main {
             System.out.println(item);
             System.out.println("Prazo para devolução: " + item.prazoDias() + " dias" + "\n");
         }
+
+        System.out.println(TipoUsuario.PROFESSOR.getLimiteEmprestimos());
+
+        Usuario user1 = new Usuario(202601, "Davi Brito",TipoUsuario.PROFESSOR);
+        Usuario user2 = new Usuario(202602, "Maria Joaquina", TipoUsuario.ALUNO);
+
+        System.out.println(user1);
+        System.out.println(user2);
     }
 }
